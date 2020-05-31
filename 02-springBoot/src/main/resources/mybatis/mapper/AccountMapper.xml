@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- namespace 对应到接口上就不需要实例化了 -->
+<mapper namespace="com.mashibing.mapper.AccountMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.mashibing.domain.Account">
+        <result column="id" property="id"></result>
+        <result column="login_name" property="loginName"></result>
+        <result column="password" property="password"></result>
+        <result column="nickname" property="nickname"></result>
+        <result column="age" property="age"></result>
+    </resultMap>
+
+
+    <select id="listAll" resultMap="BaseResultMap">
+        select * from account
+    </select>
+
+<!--    <insert id="add" parameterType="">-->
+<!--        insert into account-->
+<!--            (login_name,password,nickname,age,create_at,update_at)-->
+<!--        values-->
+<!--            (#{loginName}, #{password}, #{nickname}, #{age}, #{createAt}, #{updateAt})-->
+<!--    </insert>-->
+</mapper>
